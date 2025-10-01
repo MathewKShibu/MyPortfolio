@@ -1,0 +1,686 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  scroll-padding-top: 6rem;
+}
+
+/* Root Container */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header and Navigation */
+.Header {
+  background: linear-gradient(to right, #0077cc, #00bcd4);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Navbar layout */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Logo styling */
+.logoContainer img {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Navigation links container */
+.navMenu {
+  display: flex;
+  align-items: center;
+}
+
+/* Navigation links */
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks li {
+  position: relative;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.navLinks a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .navLinks {
+    flex-direction: column;
+    gap: 1rem;
+    background-color: rgba(0,0,0,0.1);
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Main Content */
+.MainContent {
+  flex: 1;
+  width: 100%;
+}
+
+/* Section Base */
+section {
+  padding: 4rem 2rem;
+  width: 100%;
+}
+
+/* Home Section */
+.homeSection {
+  height: 100vh;
+  width: 100%;
+  background: url('/HomeImage.png') center/cover no-repeat; /* Background image */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
+
+.homeOverlay {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homeContent {
+  max-width: 800px;
+  padding: 2rem;
+}
+
+/* Animated Text */
+.animatedTitle {
+  font-size: 3rem;
+  font-weight: bold;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.animatedSubtitle {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  animation: fadeInUp 2s ease-out forwards;
+}
+
+/* Keyframes */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* About Section */
+.aboutSection {
+  width: 100%;
+  background: url('/AboutImage.png') center/cover no-repeat;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 2rem 4rem; /* Top padding increased to push content below navbar */
+  box-sizing: border-box;
+  text-align: center;
+  min-height: 100vh; /* Allows content to grow while still filling screen */
+}
+
+/* New overlay layer for contrast */
+.aboutOverlay {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* New white box container */
+.aboutBox {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 12px;
+  max-width: 800px;
+  width: 90%;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  text-align: center;
+  margin: 0 auto; /* Center horizontally */
+}
+
+.aboutContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.aboutPhoto {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.aboutContent h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: #0077cc;
+}
+
+.aboutContent p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.basicInfo p {
+  font-size: 1.1rem;
+  color: #444;
+  margin: 0.5rem 0;
+}
+
+.basicInfo ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.galleryCTA {
+  margin-top: 2rem;
+}
+
+.galleryCTA h2 {
+  font-size: 1.6rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.galleryButton {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #0077cc;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.galleryButton:hover {
+  background-color: #005fa3;
+}
+
+.gallerySection {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.mediaGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.mediaGrid img, .mediaGrid video {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Education Section */
+.educationSection {
+  height: 100vh;
+  width: 100%;
+ background: url('/EducationImage.png') center/cover no-repeat; /* Background image */
+  padding: 4rem 2rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.educationSection h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #fefbfb;
+}
+
+.educationGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.educationCard {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 280px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.educationCard:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.educationCard h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #0077cc;
+}
+
+.educationDetails {
+  font-size: 1rem;
+  color: #444;
+  text-align: left;
+  margin-top: 1rem;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Projects Section */
+.projectsSection {
+  height: 100vh; /* Full viewport height */
+  width: 100%;
+  background: url('/ProjectImage.png') center/cover no-repeat; /* Background image */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 1.5rem;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  color: #666;
+}
+
+/* Contact Section */
+.contactSection {
+  width: 100%;
+  min-height: 100vh;
+  background: url('/ContactImage.png') center/cover no-repeat;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 2rem 4rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Overlay for spacing and centering */
+.contactOverlay {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* White content box */
+.contactBox {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+/* Existing styles */
+.contactBox h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #0077cc;
+}
+
+.contactBox p {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #444;
+}
+
+.contactBox a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.contactBox a:hover {
+  text-decoration: underline;
+}
+
+/* AirGATE Section */
+.airgateSection {
+  height: 100vh;
+  width: 100%;
+  background: url('/AirGATE&FlightBASEImage.png') center/cover no-repeat;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.airgateOverlay {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.airgateContent {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 800px;
+  width: 90%;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  text-align: left;
+}
+
+.airgateContent h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #0077cc;
+}
+
+.airgateContent p, .airgateContent ul {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.airgateContent ul {
+  padding-left: 1.5rem;
+}
+
+.airgateContent li {
+  margin-bottom: 0.5rem;
+}
+
+/* Artemis Section */
+.artemisSection {
+  height: 100vh;
+  width: 100%;
+  background: url('/ArtemisImage.png') center/cover no-repeat; /* Replace with your actual image path */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.artemisOverlay {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.artemisContent {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 800px;
+  width: 90%;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  text-align: left;
+}
+
+.artemisContent h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #0077cc;
+}
+
+.artemisContent p, .artemisContent ul {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.artemisContent ul {
+  padding-left: 1.5rem;
+}
+
+.artemisContent li {
+  margin-bottom: 0.5rem;
+}
+
+/* FlightBASE Section */
+.flightbaseSection {
+  height: 100vh;
+  width: 100%;
+  background: url('/AirGATE&FlightBASEImage.png') center/cover no-repeat; /* Replace with your image path */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flightbaseOverlay {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flightbaseContent {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 800px;
+  width: 90%;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  text-align: left;
+}
+
+.flightbaseContent h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #0077cc;
+}
+
+.flightbaseContent p, .flightbaseContent ul {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.flightbaseContent ul {
+  padding-left: 1.5rem;
+}
+
+.flightbaseContent li {
+  margin-bottom: 0.5rem;
+}
+
+/* Resume Section */
+.resumeSection {
+  width: 100%;
+  min-height: 100vh;
+  background: url('/HomeImage.png') center/cover no-repeat;
+  background-color: #f0f4f8;
+  display: flex; /* Changed from flex to block */
+  padding: 35rem 2rem 4rem; /* Increased top padding to push below navbar */
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Overlay for centering */
+.resumeOverlay {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* White content box */
+.resumeBox {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 800px;
+  width: 90%;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  text-align: center;
+  margin-top: 1rem;
+
+}
+
+/* Resume heading */
+.resumeBox h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #0077cc;
+}
+
+/* Resume image preview */
+.resumePreview {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+/* Download button */
+.download-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #0077cc;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #005fa3;
+}
+
+/* Footer */
+.Footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #eee;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .navLinks {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .aboutSection h1 {
+    font-size: 2.2rem;
+  }
+
+  .contactSection h2 {
+    font-size: 2rem;
+  }
+}
